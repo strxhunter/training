@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>結構 X 獵人 STRxHunter</title>
+  <title>足部平衡力學三級認證 · 結構X獵人 STRxHunter</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -11,8 +11,9 @@
       --sand: #C5B290;
       --brown: #997B57;
       --black: #151514;
-      --white: #F8F5F0;
       --bg: #FAF7F3;
+      --white: #fff;
+      --text-muted: rgba(21,21,20,0.55);
       --text-light: #8A7A68;
     }
 
@@ -22,7 +23,7 @@
       color: var(--black);
     }
 
-    /* ─── NAV ─── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -35,7 +36,6 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(197,178,144,0.25);
     }
-
     .logo {
       font-size: 15px;
       letter-spacing: 0.18em;
@@ -43,7 +43,6 @@
       font-weight: 500;
       text-transform: uppercase;
     }
-
     .nav-cta {
       font-size: 13px;
       letter-spacing: 0.12em;
@@ -54,87 +53,60 @@
       font-weight: 600;
       transition: background 0.2s;
     }
-    .nav-cta:hover { background: var(--brown); color: var(--white); }
+    .nav-cta:hover { background: var(--brown); color: #fff; }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
+      padding: 120px 48px 80px;
+      background: var(--black);
       position: relative;
       overflow: hidden;
-      padding: 120px 48px 80px;
     }
-
-    /* 沙漠質感背景 */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(197,178,144,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 30% 80%, rgba(153,123,87,0.10) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 60% at 60% 40%, rgba(197,178,144,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 20% 80%, rgba(153,123,87,0.06) 0%, transparent 60%);
     }
-
-    /* 細線質感 */
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 45%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 59px,
-        rgba(197,178,144,0.10) 59px,
-        rgba(197,178,144,0.10) 60px
-      );
-    }
-
-    .hero-inner {
-      max-width: 680px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-eyebrow {
+    .hero-inner { max-width: 680px; position: relative; z-index: 2; }
+    .eyebrow {
       font-size: 11px;
       letter-spacing: 0.35em;
       color: var(--sand);
       text-transform: uppercase;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       opacity: 0.8;
     }
-
-    .hero-title {
-      font-size: clamp(36px, 5vw, 62px);
-      font-weight: 700;
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 800;
       line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--black);
-      margin-bottom: 24px;
+      color: #F8F5F0;
+      margin-bottom: 16px;
     }
-
-    .hero-title span {
-      color: var(--brown);
-    }
-
+    .hero h1 span { color: var(--sand); }
     .hero-sub {
       font-size: clamp(15px, 1.8vw, 18px);
+      line-height: 1.85;
+      color: rgba(248,245,240,0.6);
+      margin-bottom: 16px;
+      max-width: 540px;
+    }
+    .hero-logic {
+      font-size: 14px;
+      color: var(--sand);
       line-height: 1.8;
-      color: rgba(21,21,20,0.60);
-      margin-bottom: 48px;
-      max-width: 520px;
+      border-left: 2px solid var(--sand);
+      padding-left: 20px;
+      margin: 32px 0 48px;
+      opacity: 0.85;
     }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-block;
       font-size: 14px;
@@ -146,71 +118,241 @@
       text-decoration: none;
       transition: background 0.2s, transform 0.2s;
     }
-    .btn-primary:hover {
-      background: var(--brown);
-      color: var(--white);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
+    .btn-primary:hover { background: var(--brown); color: #fff; transform: translateY(-1px); }
+    .btn-ghost {
       font-size: 13px;
       letter-spacing: 0.12em;
-      color: var(--brown);
+      color: var(--sand);
       text-decoration: none;
-      border-bottom: 1px solid rgba(153,123,87,0.4);
+      border-bottom: 1px solid rgba(197,178,144,0.4);
       padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .btn-secondary:hover {
-      color: var(--black);
-      border-color: var(--black);
     }
 
-    .hero-note {
-      margin-top: 20px;
-      font-size: 12px;
-      color: var(--text-light);
-      letter-spacing: 0.05em;
+    /* OVERVIEW */
+    .overview {
+      padding: 100px 48px;
+      background: var(--white);
     }
-
-    /* 右側裝飾數字 */
-    .hero-deco {
-      position: absolute;
-      right: 80px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-      text-align: right;
-      display: none;
-    }
-
-    @media (min-width: 1024px) {
-      .hero-deco { display: block; }
-    }
-
-    .hero-deco-num {
-      font-size: 120px;
-      font-weight: 800;
-      color: rgba(197,178,144,0.18);
-      letter-spacing: -0.05em;
-      line-height: 1;
-    }
-
-    .hero-deco-label {
+    .overview-inner { max-width: 860px; margin: 0 auto; }
+    .section-label {
       font-size: 11px;
-      letter-spacing: 0.3em;
-      color: rgba(153,123,87,0.45);
+      letter-spacing: 0.35em;
+      color: var(--brown);
       text-transform: uppercase;
-      margin-top: 8px;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+      margin-bottom: 48px;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .overview-card {
+      background: var(--bg);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .overview-card .level-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--brown);
+      border: 1px solid rgba(153,123,87,0.4);
+      padding: 4px 12px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .overview-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .overview-card .meta {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+    .overview-card .price {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--black);
+    }
+    .overview-card .price-unit {
+      font-size: 13px;
+      color: var(--text-light);
+      display: block;
+      margin-top: 4px;
     }
 
-    /* ─── MOBILE ─── */
+    /* COURSES */
+    .course-section {
+      padding: 100px 48px;
+    }
+    .course-section:nth-child(odd) { background: var(--bg); }
+    .course-section:nth-child(even) { background: var(--white); }
+
+    .course-inner { max-width: 860px; margin: 0 auto; }
+    .course-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 48px;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+    }
+    .course-num {
+      font-size: 80px;
+      font-weight: 800;
+      color: rgba(197,178,144,0.15);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .course-header-text { flex: 1; }
+    .course-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--brown);
+      border: 1px solid rgba(153,123,87,0.4);
+      padding: 4px 14px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .course-header h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .course-value {
+      font-size: 14px;
+      color: var(--brown);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .course-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .course-meta span {
+      font-size: 13px;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .course-meta strong { color: var(--black); font-weight: 700; }
+
+    .course-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .course-points h4 {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--brown);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .course-points ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .course-points ul li {
+      font-size: 14px;
+      color: #3A3530;
+      line-height: 1.75;
+      padding-left: 20px;
+      position: relative;
+    }
+    .course-points ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 1px;
+      background: var(--sand);
+    }
+    .course-points ul li strong { color: var(--black); font-weight: 600; }
+
+    .course-outcome {
+      background: var(--black);
+      padding: 36px 32px;
+    }
+    .course-outcome h4 {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--sand);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .course-outcome p {
+      font-size: 14px;
+      color: rgba(248,245,240,0.75);
+      line-height: 1.85;
+    }
+
+    /* CTA */
+    .final-cta {
+      background: var(--black);
+      padding: 120px 48px;
+      text-align: center;
+    }
+    .final-cta .eyebrow { color: var(--sand); }
+    .final-cta h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 700;
+      color: #F8F5F0;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .final-cta p {
+      font-size: 15px;
+      color: rgba(248,245,240,0.55);
+      line-height: 1.9;
+      margin-bottom: 48px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .cta-note { font-size: 12px; color: rgba(248,245,240,0.3); letter-spacing: 0.08em; }
+
+    footer {
+      background: #0E0E0D;
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer p { font-size: 13px; color: rgba(248,245,240,0.3); letter-spacing: 0.15em; }
+    footer a { font-size: 12px; color: rgba(248,245,240,0.3); text-decoration: none; letter-spacing: 0.1em; margin-left: 24px; }
+
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
-      .hero { padding: 100px 24px 60px; }
-      .hero-title { font-size: 32px; }
-      .btn-primary { padding: 16px 32px; width: 100%; text-align: center; }
-      .btn-secondary { display: none; }
+      .hero, .overview, .course-section, .final-cta { padding-left: 24px; padding-right: 24px; }
+      .overview-grid { grid-template-columns: 1fr; gap: 12px; }
+      .course-header { gap: 16px; }
+      .course-num { font-size: 48px; }
+      .course-body { grid-template-columns: 1fr; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -219,263 +361,175 @@
   <!-- NAV -->
   <nav>
     <div class="logo">STRxHunter · 結構X獵人</div>
-    <a href="https://lin.ee/BfWdzao" class="nav-cta">預約體驗</a>
+    <a href="https://lin.ee/BfWdzao" class="nav-cta">洽詢報名</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <p class="hero-eyebrow">身體結構平衡專家</p>
-      <h1 class="hero-title">
-        還原原廠設定，<br>
-        奪回你的<span>健康自主權</span>
-      </h1>
-      <p class="hero-sub">
-        身體痠痛麻不是老化，是結構在告訴你它需要被調回來。<br>
-        我們用生物力學分析，找到失衡的根源，讓你的身體重新穩定、靈活。
-      </p>
+      <p class="eyebrow">結構X獵人 · 專業培訓體系</p>
+      <h1>足部平衡力學<br><span>三級認證體系</span></h1>
+      <p class="hero-sub">從健康教練到健康管理師，建立你在足部結構領域的專業地位與執業能力。</p>
+      <div class="hero-logic">
+        「教練帶動生活習慣、諮詢師發現問題、管理師掌握解決方案。」
+      </div>
       <div class="hero-actions">
-        <a href="https://lin.ee/BfWdzao" class="btn-primary">預約體驗體驗 NT$1,800 →</a>
-        <a href="#about" class="btn-secondary">了解更多</a>
+        <a href="https://lin.ee/BfWdzao" class="btn-primary">加 LINE 洽詢報名 →</a>
+        <a href="#courses" class="btn-ghost">查看課程內容</a>
       </div>
-      <p class="hero-note">體驗體驗 60 分鐘・全身結構調整・不強迫後續</p>
-    </div>
-
-    <div class="hero-deco">
-      <div class="hero-deco-num">509</div>
-      <div class="hero-deco-label">LINE 好友信任中</div>
     </div>
   </section>
 
+  <!-- OVERVIEW -->
+  <section class="overview">
+    <div class="overview-inner">
+      <p class="section-label">三級認證總覽</p>
+      <h2 class="section-title">依你的目標，選擇對應的認證級別</h2>
+      <div class="overview-grid">
 
-  <!-- 解方介紹 -->
-  <section style="background:#FAF7F3; padding: 100px 48px;">
-    <div style="max-width:800px; margin:0 auto;">
-      <p style="font-size:11px; letter-spacing:0.35em; color:#997B57; text-transform:uppercase; margin-bottom:20px;">我們的方式</p>
-      <h2 style="font-size:clamp(28px,4vw,44px); font-weight:700; color:#151514; line-height:1.3; margin-bottom:24px;">
-        找到失衡的根源，<br>讓身體回到它本來的樣子
-      </h2>
-      <p style="font-size:16px; color:rgba(21,21,20,0.6); line-height:1.9; margin-bottom:64px; max-width:580px;">
-        我們用生物力學分析，看懂你的身體在哪裡失衡、怎麼代償。不是壓痛點、不是治症狀——是從結構根源重新校正，讓改變真正留下來。
-      </p>
-
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:2px; margin-bottom:64px;">
-
-        <div style="background:#fff; padding:40px 32px;">
-          <div style="font-size:32px; font-weight:800; color:#C5B290; margin-bottom:16px;">01</div>
-          <p style="font-size:15px; font-weight:700; color:#151514; margin-bottom:10px;">結構分析</p>
-          <p style="font-size:13px; color:#8A7A68; line-height:1.8;">用生物力學的角度看你的身體，找出哪裡偏移、哪裡在代償，而不是只處理你說痛的地方。</p>
+        <div class="overview-card">
+          <span class="level-tag">初階</span>
+          <h3>足部結構平衡<br>健康教練</h3>
+          <div class="meta">5 小時・1 天</div>
+          <div class="price">NT$12,800</div>
+          <span class="price-unit">/ 位</span>
         </div>
 
-        <div style="background:#fff; padding:40px 32px;">
-          <div style="font-size:32px; font-weight:800; color:#C5B290; margin-bottom:16px;">02</div>
-          <p style="font-size:15px; font-weight:700; color:#151514; margin-bottom:10px;">結構校正</p>
-          <p style="font-size:13px; color:#8A7A68; line-height:1.8;">針對失衡的根源調整，讓骨骼、肌肉回到正確的排列位置，身體才能真正放鬆。</p>
+        <div class="overview-card" style="background:#151514;">
+          <span class="level-tag" style="color:var(--sand); border-color:rgba(197,178,144,0.4);">中階</span>
+          <h3 style="color:#F8F5F0;">足部結構平衡<br>健康諮詢師</h3>
+          <div class="meta" style="color:rgba(248,245,240,0.45);">10 小時・2 天</div>
+          <div class="price" style="color:#F8F5F0;">NT$19,800</div>
+          <span class="price-unit" style="color:rgba(248,245,240,0.45);">/ 位</span>
         </div>
 
-        <div style="background:#fff; padding:40px 32px;">
-          <div style="font-size:32px; font-weight:800; color:#C5B290; margin-bottom:16px;">03</div>
-          <p style="font-size:15px; font-weight:700; color:#151514; margin-bottom:10px;">自主能力建立</p>
-          <p style="font-size:13px; color:#8A7A68; line-height:1.8;">教你認識自己的身體，讓改變不只發生在調整當下——你有能力在日常中維持它。</p>
+        <div class="overview-card">
+          <span class="level-tag">高階</span>
+          <h3>足部結構平衡<br>健康管理師</h3>
+          <div class="meta">15 小時・3 天</div>
+          <div class="price">NT$29,800</div>
+          <span class="price-unit">/ 位</span>
         </div>
 
       </div>
-
-      <div style="display:flex; align-items:center; gap:48px; padding:40px; background:#151514; flex-wrap:wrap;">
-        <div style="flex:1; min-width:200px;">
-          <p style="font-size:13px; letter-spacing:0.15em; color:#C5B290; text-transform:uppercase; margin-bottom:8px;">我們的理念</p>
-          <p style="font-size:20px; font-weight:700; color:#F8F5F0; line-height:1.6;">還原原廠設定<br>不是修補，是重建</p>
-        </div>
-        <div style="flex:2; min-width:240px;">
-          <p style="font-size:14px; color:rgba(248,245,240,0.65); line-height:1.9;">你的身體本來就知道怎麼運作——只是在某個時間點開始偏移了。我們做的，是幫它找回那個平衡點，讓你重新掌握自己的身體狀態。</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- 體驗方案 -->
-  <section style="background:#fff; padding:100px 48px;">
-    <div style="max-width:800px; margin:0 auto;">
-      <p style="font-size:11px; letter-spacing:0.35em; color:#997B57; text-transform:uppercase; margin-bottom:20px;">體驗方案</p>
-      <h2 style="font-size:clamp(28px,4vw,44px); font-weight:700; color:#151514; line-height:1.3; margin-bottom:16px;">
-        選一個適合你的方式<br>開始第一次
-      </h2>
-      <p style="font-size:15px; color:rgba(21,21,20,0.55); line-height:1.8; margin-bottom:56px;">第一次來不知道選哪個？選「全身結構調整體驗」就對了——了解你的狀況之後，我們再一起討論接下來怎麼做。</p>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:24px; margin-bottom:48px;">
-
-        <!-- 主推 -->
-        <div style="border:2px solid #C5B290; padding:40px 32px; position:relative;">
-          <div style="position:absolute; top:-13px; left:32px; background:#C5B290; color:#151514; font-size:11px; font-weight:700; letter-spacing:0.15em; padding:4px 14px;">推薦入門</div>
-          <p style="font-size:13px; color:#997B57; letter-spacing:0.1em; margin-bottom:12px;">全身結構調整</p>
-          <p style="font-size:13px; color:#8A7A68; margin-bottom:4px;">不指定教練・60 分鐘</p>
-          <div style="margin:20px 0 8px;">
-            <span style="font-size:32px; font-weight:800; color:#151514;">NT$1,800</span>
-            <span style="font-size:13px; color:#8A7A68; margin-left:8px; text-decoration:line-through;">原價 2,200</span>
+  <!-- COURSE 1 -->
+  <section class="course-section" id="courses">
+    <div class="course-inner">
+      <div class="course-header">
+        <div class="course-num">01</div>
+        <div class="course-header-text">
+          <span class="course-tag">初階認證</span>
+          <h2>足部結構平衡<br>健康教練</h2>
+          <p class="course-value">讓學員具備「看穿足部問題」的眼光</p>
+          <div class="course-meta">
+            <span>⏱ <strong>5 小時</strong>・1 天</span>
+            <span>💰 <strong>NT$12,800</strong> / 位</span>
           </div>
-          <p style="font-size:13px; color:#8A7A68; line-height:1.8; margin-bottom:28px;">從頭到腳的結構評估＋全身調整，第一次最完整的認識自己身體的方式。</p>
-          <a href="https://lin.ee/BfWdzao" style="display:block; text-align:center; background:#151514; color:#F8F5F0; font-size:13px; font-weight:700; letter-spacing:0.1em; padding:16px; text-decoration:none; transition:background 0.2s;">加 LINE 預約 →</a>
         </div>
-
-        <!-- Sean -->
-        <div style="border:1px solid rgba(197,178,144,0.35); padding:40px 32px;">
-          <p style="font-size:13px; color:#997B57; letter-spacing:0.1em; margin-bottom:12px;">全身結構調整</p>
-          <p style="font-size:13px; color:#8A7A68; margin-bottom:4px;">Sean 教練・50 分鐘</p>
-          <div style="margin:20px 0 8px;">
-            <span style="font-size:32px; font-weight:800; color:#151514;">NT$2,500</span>
-          </div>
-          <p style="font-size:13px; color:#8A7A68; line-height:1.8; margin-bottom:28px;">指定 Sean 教練，深度結構分析，適合想持續跟同一位教練建立長期調整計畫的人。</p>
-          <a href="https://lin.ee/BfWdzao" style="display:block; text-align:center; border:1px solid #997B57; color:#997B57; font-size:13px; font-weight:700; letter-spacing:0.1em; padding:16px; text-decoration:none;">加 LINE 預約 →</a>
-        </div>
-
-        <!-- 張哲 -->
-        <div style="border:1px solid rgba(197,178,144,0.35); padding:40px 32px;">
-          <p style="font-size:13px; color:#997B57; letter-spacing:0.1em; margin-bottom:12px;">全身結構引導・專屬體驗</p>
-          <p style="font-size:13px; color:#8A7A68; margin-bottom:4px;">張哲教練・70 分鐘</p>
-          <div style="margin:20px 0 8px;">
-            <span style="font-size:32px; font-weight:800; color:#151514;">NT$3,600</span>
-          </div>
-          <p style="font-size:13px; color:#8A7A68; line-height:1.8; margin-bottom:28px;">最完整的專屬體驗，70 分鐘深度引導，適合想徹底了解自身結構狀況的人。</p>
-          <a href="https://lin.ee/BfWdzao" style="display:block; text-align:center; border:1px solid #997B57; color:#997B57; font-size:13px; font-weight:700; letter-spacing:0.1em; padding:16px; text-decoration:none;">加 LINE 預約 →</a>
-        </div>
-
       </div>
-
-      <p style="font-size:13px; color:#8A7A68; text-align:center; letter-spacing:0.05em;">所有方案均透過 LINE 官方帳號預約・不強迫後續</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section style="background:#FAF7F3; padding:100px 48px;">
-    <div style="max-width:680px; margin:0 auto;">
-      <p style="font-size:11px; letter-spacing:0.35em; color:#997B57; text-transform:uppercase; margin-bottom:20px;">常見問題</p>
-      <h2 style="font-size:clamp(28px,4vw,40px); font-weight:700; color:#151514; line-height:1.3; margin-bottom:56px;">
-        來之前，你可能想知道
-      </h2>
-
-      <div style="display:flex; flex-direction:column; gap:2px;">
-
-        <details style="background:#fff; padding:28px 32px; cursor:pointer; group;">
-          <summary style="font-size:15px; font-weight:600; color:#151514; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            會痛嗎？
-            <span style="color:#C5B290; font-size:20px; font-weight:300;">+</span>
-          </summary>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.9; margin-top:16px;">不是推拿或整骨，不會刻意壓痛點。過程中會引導你感受身體的位置變化，多數人形容是「有感但舒服」的程度。</p>
-        </details>
-
-        <details style="background:#fff; padding:28px 32px; cursor:pointer;">
-          <summary style="font-size:15px; font-weight:600; color:#151514; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            要來幾次才有效？
-            <span style="color:#C5B290; font-size:20px; font-weight:300;">+</span>
-          </summary>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.9; margin-top:16px;">第一次結束後通常就有明顯感受。後續次數因人而異，取決於你的結構狀況和生活習慣——第一次來之後我們會一起討論，不會預設要你買套數。</p>
-        </details>
-
-        <details style="background:#fff; padding:28px 32px; cursor:pointer;">
-          <summary style="font-size:15px; font-weight:600; color:#151514; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            跟一般按摩、整骨有什麼不同？
-            <span style="color:#C5B290; font-size:20px; font-weight:300;">+</span>
-          </summary>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.9; margin-top:16px;">按摩處理的是肌肉緊繃的症狀，整骨針對關節位置。我們從生物力學出發，分析整體結構的失衡模式——找到根源，才能讓改變真正留下來。</p>
-        </details>
-
-        <details style="background:#fff; padding:28px 32px; cursor:pointer;">
-          <summary style="font-size:15px; font-weight:600; color:#151514; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            有運動習慣的人適合來嗎？
-            <span style="color:#C5B290; font-size:20px; font-weight:300;">+</span>
-          </summary>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.9; margin-top:16px;">非常適合。很多運動愛好者發現，結構調整後動作效率明顯提升、也更不容易受傷。不管是跑步、重訓、瑜珈，結構對了，運動才能真正發揮效果。</p>
-        </details>
-
-        <details style="background:#fff; padding:28px 32px; cursor:pointer;">
-          <summary style="font-size:15px; font-weight:600; color:#151514; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            怎麼預約？
-            <span style="color:#C5B290; font-size:20px; font-weight:300;">+</span>
-          </summary>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.9; margin-top:16px;">透過 LINE 官方帳號預約，加好友後告訴我們你方便的時間，我們會幫你安排。有任何問題也歡迎直接在 LINE 上詢問。</p>
-        </details>
-
+      <div class="course-body">
+        <div class="course-points">
+          <h4>課程重點</h4>
+          <ul>
+            <li><strong>基礎力學：</strong>足弓三點受力與人體地基的關係</li>
+            <li><strong>選鞋撇步：</strong>如何挑選適合自己的鞋子</li>
+            <li><strong>產品力學：</strong>足弓產品的結構原理與穿戴衛教</li>
+            <li><strong>動態引導：</strong>教導客戶正確的站姿與步態，優化產品穿戴效果</li>
+          </ul>
+        </div>
+        <div class="course-outcome">
+          <h4>產出能力</h4>
+          <p>具備初階評估能力，能透過專業衛教銷售產品並提供基礎售後服務。建立大眾正確的足部力學觀念，精準推廣足部結構平衡矯正產品。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 最終 CTA -->
-  <section style="background:#151514; padding:120px 48px; text-align:center;">
-    <div style="max-width:600px; margin:0 auto;">
-      <p style="font-size:11px; letter-spacing:0.35em; color:#C5B290; text-transform:uppercase; margin-bottom:24px;">準備好了嗎</p>
-      <h2 style="font-size:clamp(30px,4vw,48px); font-weight:700; color:#F8F5F0; line-height:1.3; margin-bottom:24px;">
-        讓身體回到<br>它本來的樣子
-      </h2>
-      <p style="font-size:15px; color:rgba(248,245,240,0.55); line-height:1.9; margin-bottom:48px;">
-        第一次體驗不需要做任何準備，穿著方便活動的衣服來就好。<br>我們從你的身體狀況開始聊。
-      </p>
-      <a href="https://lin.ee/BfWdzao" style="display:inline-block; background:#C5B290; color:#151514; font-size:15px; font-weight:700; letter-spacing:0.12em; padding:20px 56px; text-decoration:none; margin-bottom:20px;">加 LINE 預約體驗 →</a>
-      <p style="font-size:12px; color:rgba(248,245,240,0.3); letter-spacing:0.08em;">體驗 NT$1,800・60 分鐘・不強迫後續</p>
+  <!-- COURSE 2 -->
+  <section class="course-section">
+    <div class="course-inner">
+      <div class="course-header">
+        <div class="course-num">02</div>
+        <div class="course-header-text">
+          <span class="course-tag">中階認證</span>
+          <h2>足部結構平衡<br>健康諮詢師</h2>
+          <p class="course-value">現場解決問題，讓客人「有感」</p>
+          <div class="course-meta">
+            <span>⏱ <strong>10 小時</strong>・2 天</span>
+            <span>💰 <strong>NT$19,800</strong> / 位</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-body">
+        <div class="course-points">
+          <h4>課程重點</h4>
+          <ul>
+            <li><strong>結構分析：</strong>掌握足踝部結構失衡評估及董氏足底全息評估思維邏輯</li>
+            <li><strong>還原技術（基礎）：</strong>針對足踝結構的基礎徒手還原技巧，立即改善結構偏移</li>
+            <li><strong>方案制定：</strong>結合「手法調整」與「鞋具介入」的綜合諮詢建議</li>
+          </ul>
+        </div>
+        <div class="course-outcome">
+          <h4>產出能力</h4>
+          <p>能處理常見的體態偏移與足部痠痛，展現技術價值，大幅提升客戶信任度。結合結構X獵人基礎徒手技術，提供客製化的結構還原方案。</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer style="background:#0E0E0D; padding:40px 48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-    <p style="font-size:13px; color:rgba(248,245,240,0.3); letter-spacing:0.15em;">STRxHunter · 結構X獵人</p>
-    <div style="display:flex; gap:32px;">
-      <a href="https://lin.ee/BfWdzao" style="font-size:12px; color:rgba(248,245,240,0.3); text-decoration:none; letter-spacing:0.1em;">LINE 官方帳號</a>
-      <a href="https://strxhunter.com" style="font-size:12px; color:rgba(248,245,240,0.3); text-decoration:none; letter-spacing:0.1em;">strxhunter.com</a>
+  <!-- COURSE 3 -->
+  <section class="course-section">
+    <div class="course-inner">
+      <div class="course-header">
+        <div class="course-num">03</div>
+        <div class="course-header-text">
+          <span class="course-tag">高階認證</span>
+          <h2>足部結構平衡<br>健康管理師</h2>
+          <p class="course-value">提供足部疑難雜症解決方案，建立專家地位</p>
+          <div class="course-meta">
+            <span>⏱ <strong>15 小時</strong>・3 天</span>
+            <span>💰 <strong>NT$29,800</strong> / 位</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-body">
+        <div class="course-points">
+          <h4>課程重點</h4>
+          <ul>
+            <li><strong>全人管理：</strong>從足底到全人的力學整合評估，分析複雜的全身性代償</li>
+            <li><strong>核心心法：</strong>高階下肢結構還原技巧，包含髖部、膝部、足踝部及頑固的力學失衡</li>
+            <li><strong>組織與教學：</strong>課程演示、個案管理系統建立、講師職能培訓</li>
+          </ul>
+        </div>
+        <div class="course-outcome">
+          <h4>產出能力</h4>
+          <p>具備經營足部健康管理中心的能力，並開啟自然醫學碩士的銜接路徑，準備晉升為正式講師及區域認證經銷商資格。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <p class="eyebrow" style="font-size:11px; letter-spacing:0.35em; text-transform:uppercase; margin-bottom:24px;">開始你的認證之路</p>
+    <h2>從第一步開始，<br>建立你的專業版圖</h2>
+    <p>三個級別可依序進修，也可依照目前的執業需求選擇對應的入門級別。加 LINE 告訴我們你的背景，我們幫你找到最適合的起點。</p>
+    <div class="cta-group">
+      <a href="https://lin.ee/BfWdzao" class="btn-primary">加 LINE 洽詢報名 →</a>
+      <p class="cta-note">報名前可先洽詢・無強迫消費</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>STRxHunter · 結構X獵人</p>
+    <div>
+      <a href="https://lin.ee/BfWdzao">LINE 官方帳號</a>
+      <a href="https://strxhunter.com">strxhunter.com</a>
     </div>
   </footer>
-
-  <!-- 痛點共鳴 -->
-  <section id="about" style="background:#FFF9F4; padding: 100px 48px;">
-    <div style="max-width:800px; margin:0 auto;">
-      <p style="font-size:11px; letter-spacing:0.35em; color:#997B57; text-transform:uppercase; margin-bottom:20px;">你是不是也這樣？</p>
-      <h2 style="font-size:clamp(28px,4vw,44px); font-weight:700; color:#151514; line-height:1.3; margin-bottom:56px;">
-        這些不舒服，<br>你已經忍很久了
-      </h2>
-
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap:24px;">
-
-        <div style="background:#fff; border-left:3px solid #C5B290; padding:28px 32px;">
-          <p style="font-size:16px; font-weight:600; color:#151514; margin-bottom:10px;">脖子、肩膀總是緊繃</p>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.8;">按摩完舒服一下，隔幾天又回來——因為根本沒找到原因。</p>
-        </div>
-
-        <div style="background:#fff; border-left:3px solid #C5B290; padding:28px 32px;">
-          <p style="font-size:16px; font-weight:600; color:#151514; margin-bottom:10px;">腰痛、膝蓋痛</p>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.8;">久坐起來就痛，走一走才好一點。被說「年紀到了很正常」，但你心裡知道不該是這樣。</p>
-        </div>
-
-        <div style="background:#fff; border-left:3px solid #C5B290; padding:28px 32px;">
-          <p style="font-size:16px; font-weight:600; color:#151514; margin-bottom:10px;">認真運動，卻反覆受傷</p>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.8;">練得很努力，進步卻停滯，甚至越練越痛——結構沒對，力氣全往錯的地方使。</p>
-        </div>
-
-        <div style="background:#fff; border-left:3px solid #C5B290; padding:28px 32px;">
-          <p style="font-size:16px; font-weight:600; color:#151514; margin-bottom:10px;">單腳站不穩、走路容易歪</p>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.8;">平衡感變差，走久了腳底、膝蓋就開始抗議——足部結構的問題，全身都在代償。</p>
-        </div>
-
-        <div style="background:#fff; border-left:3px solid #C5B290; padding:28px 32px;">
-          <p style="font-size:16px; font-weight:600; color:#151514; margin-bottom:10px;">睡醒反而更緊繃</p>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.8;">躺了一整晚，起床脖子、背還是硬的。不是床的問題，是身體在睡眠中無法真正放鬆。</p>
-        </div>
-
-        <div style="background:#fff; border-left:3px solid #C5B290; padding:28px 32px;">
-          <p style="font-size:16px; font-weight:600; color:#151514; margin-bottom:10px;">看過很多人，還是沒好</p>
-          <p style="font-size:14px; color:#8A7A68; line-height:1.8;">推拿、整骨、復健都試過，每次暫時舒緩，問題卻一直在——因為沒有從結構根源下手。</p>
-        </div>
-
-      </div>
-
-      <div style="margin-top:56px; padding:36px 40px; background:linear-gradient(135deg,#FAF7F3,#F0E8DC); border:1px solid rgba(197,178,144,0.3);">
-        <p style="font-size:17px; font-weight:600; color:#151514; line-height:1.8; margin-bottom:8px;">
-          這些不是「忍一忍就好」的問題
-        </p>
-        <p style="font-size:15px; color:#997B57; line-height:1.8;">
-          身體一直在發出訊號——它只是需要你幫它調回正確的位置。
-        </p>
-      </div>
-    </div>
-  </section>
 
 </body>
 </html>
