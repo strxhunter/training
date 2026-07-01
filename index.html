@@ -11,6 +11,7 @@
       --sand: #C5B290;
       --brown: #997B57;
       --black: #151514;
+      --light-sand: #E8DDD0;
       --bg: #FAF7F3;
       --white: #fff;
       --text-muted: rgba(21,21,20,0.55);
@@ -61,7 +62,7 @@
       display: flex;
       align-items: center;
       padding: 120px 48px 80px;
-      background: var(--black);
+      background: var(--light-sand);
       position: relative;
       overflow: hidden;
     }
@@ -77,34 +78,33 @@
     .eyebrow {
       font-size: 11px;
       letter-spacing: 0.35em;
-      color: var(--sand);
+      color: var(--brown);
       text-transform: uppercase;
       margin-bottom: 24px;
-      opacity: 0.8;
+      opacity: 0.9;
     }
     .hero h1 {
       font-size: clamp(36px, 5vw, 60px);
       font-weight: 800;
       line-height: 1.2;
-      color: #F8F5F0;
+      color: var(--black);
       margin-bottom: 16px;
     }
-    .hero h1 span { color: var(--sand); }
+    .hero h1 span { color: var(--brown); }
     .hero-sub {
       font-size: clamp(15px, 1.8vw, 18px);
       line-height: 1.85;
-      color: rgba(248,245,240,0.6);
+      color: rgba(21,21,20,0.6);
       margin-bottom: 16px;
       max-width: 540px;
     }
     .hero-logic {
       font-size: 14px;
-      color: var(--sand);
+      color: var(--brown);
       line-height: 1.8;
-      border-left: 2px solid var(--sand);
+      border-left: 2px solid var(--brown);
       padding-left: 20px;
       margin: 32px 0 48px;
-      opacity: 0.85;
     }
     .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
     .btn-primary {
@@ -122,9 +122,9 @@
     .btn-ghost {
       font-size: 13px;
       letter-spacing: 0.12em;
-      color: var(--sand);
+      color: var(--brown);
       text-decoration: none;
-      border-bottom: 1px solid rgba(197,178,144,0.4);
+      border-bottom: 1px solid rgba(153,123,87,0.4);
       padding-bottom: 2px;
     }
 
@@ -291,25 +291,25 @@
     .course-points ul li strong { color: var(--black); font-weight: 600; }
 
     .course-outcome {
-      background: var(--black);
+      background: var(--light-sand);
       padding: 36px 32px;
     }
     .course-outcome h4 {
       font-size: 11px;
       letter-spacing: 0.2em;
-      color: var(--sand);
+      color: var(--brown);
       text-transform: uppercase;
       margin-bottom: 16px;
     }
     .course-outcome p {
       font-size: 14px;
-      color: rgba(248,245,240,0.75);
+      color: rgba(21,21,20,0.7);
       line-height: 1.85;
     }
 
     /* CTA */
     .final-cta {
-      background: var(--black);
+      background: var(--light-sand);
       padding: 120px 48px;
       text-align: center;
     }
@@ -317,13 +317,13 @@
     .final-cta h2 {
       font-size: clamp(30px, 4vw, 48px);
       font-weight: 700;
-      color: #F8F5F0;
+      color: var(--black);
       line-height: 1.3;
       margin-bottom: 24px;
     }
     .final-cta p {
       font-size: 15px;
-      color: rgba(248,245,240,0.55);
+      color: rgba(21,21,20,0.6);
       line-height: 1.9;
       margin-bottom: 48px;
       max-width: 500px;
@@ -331,10 +331,10 @@
       margin-right: auto;
     }
     .cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .cta-note { font-size: 12px; color: rgba(248,245,240,0.3); letter-spacing: 0.08em; }
+    .cta-note { font-size: 12px; color: rgba(21,21,20,0.45); letter-spacing: 0.08em; }
 
     footer {
-      background: #0E0E0D;
+      background: var(--light-sand);
       padding: 40px 48px;
       display: flex;
       justify-content: space-between;
@@ -342,8 +342,8 @@
       flex-wrap: wrap;
       gap: 16px;
     }
-    footer p { font-size: 13px; color: rgba(248,245,240,0.3); letter-spacing: 0.15em; }
-    footer a { font-size: 12px; color: rgba(248,245,240,0.3); text-decoration: none; letter-spacing: 0.1em; margin-left: 24px; }
+    footer p { font-size: 13px; color: rgba(21,21,20,0.45); letter-spacing: 0.15em; }
+    footer a { font-size: 12px; color: rgba(21,21,20,0.45); text-decoration: none; letter-spacing: 0.1em; margin-left: 24px; }
 
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
@@ -395,12 +395,12 @@
           <span class="price-unit">/ 位</span>
         </div>
 
-        <div class="overview-card" style="background:#151514;">
-          <span class="level-tag" style="color:var(--sand); border-color:rgba(197,178,144,0.4);">中階</span>
-          <h3 style="color:#F8F5F0;">足部結構平衡<br>健康諮詢師</h3>
-          <div class="meta" style="color:rgba(248,245,240,0.45);">10 小時・2 天</div>
-          <div class="price" style="color:#F8F5F0;">NT$19,800</div>
-          <span class="price-unit" style="color:rgba(248,245,240,0.45);">/ 位</span>
+        <div class="overview-card" style="background:#D4C4AD;">
+          <span class="level-tag">中階</span>
+          <h3 style="color:var(--black);">足部結構平衡<br>健康諮詢師</h3>
+          <div class="meta" style="color:rgba(21,21,20,0.5);">10 小時・2 天</div>
+          <div class="price" style="color:var(--black);">NT$19,800</div>
+          <span class="price-unit" style="color:rgba(21,21,20,0.5);">/ 位</span>
         </div>
 
         <div class="overview-card">
@@ -507,6 +507,173 @@
         <div class="course-outcome">
           <h4>產出能力</h4>
           <p>具備經營足部健康管理中心的能力，並開啟自然醫學碩士的銜接路徑，準備晉升為正式講師及區域認證經銷商資格。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 董氏奇穴補氣九穴 -->
+  <section class="course-section">
+    <div class="course-inner">
+      <div class="course-header">
+        <div class="course-num">04</div>
+        <div class="course-header-text">
+          <span class="course-tag">獨立課程</span>
+          <h2>董氏奇穴<br>穴位基礎與補氣九穴</h2>
+          <p class="course-value">立身體地圖 × 取穴原則——學會「如何找到穴位」，而不是死記穴位</p>
+          <div class="course-meta">
+            <span>⏱ <strong>1 天</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="course-body">
+        <div class="course-points">
+          <h4>課程重點</h4>
+          <ul>
+            <li><strong>骨骼定位法：</strong>以骨標點為參照，提高取穴準確度</li>
+            <li><strong>穴位基礎核心觀念：</strong>穴位是什麼？經絡是什麼？董氏奇穴的特色</li>
+            <li><strong>取穴應用原則：</strong>面對各種症狀，立即搭配高手級穴位組</li>
+            <li><strong>補氣九穴：</strong>調補臟腑能量的萬用穴組</li>
+            <li><strong>超過十組實用穴位：</strong>簡單上手、隨時可用</li>
+          </ul>
+        </div>
+        <div class="course-outcome">
+          <h4>課程大綱</h4>
+          <p>
+            關於穴位的普遍錯誤迷思<br>
+            高效運用穴位的七個關鍵觀念<br>
+            生活常見六大類穴位工具介紹<br>
+            萬用且強大的補氣九穴<br>
+            生活常見問題建議穴位<br>
+            提醒與總結
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 結構覺醒三部曲 -->
+  <section style="background:var(--light-sand); padding:100px 48px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <p class="eyebrow" style="font-size:11px; letter-spacing:0.35em; color:var(--sand); text-transform:uppercase; margin-bottom:20px;">進階培訓體系</p>
+      <h2 style="font-size:clamp(28px,4vw,44px); font-weight:800; color:var(--black); line-height:1.3; margin-bottom:24px;">「結構覺醒」三部曲</h2>
+      <p style="font-size:15px; color:rgba(21,21,20,0.55); line-height:1.9; max-width:640px; margin-bottom:56px;">一套精心設計、層層遞進的完整學習體系。從「看懂結構」到「精準操作」，再到「整合內外全息觀」，引導學員走完從觀察者到實踐者的完整成長路徑。</p>
+
+      <!-- 三部曲路徑圖 -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2px; margin-bottom:80px;">
+        <div style="background:rgba(197,178,144,0.08); border-top:2px solid var(--sand); padding:36px 28px;">
+          <div style="font-size:11px; letter-spacing:0.25em; color:var(--sand); text-transform:uppercase; margin-bottom:16px;">第一部曲</div>
+          <h3 style="font-size:18px; font-weight:700; color:var(--black); margin-bottom:12px; line-height:1.4;">拆解先修班</h3>
+          <div style="font-size:13px; color:rgba(21,21,20,0.5); margin-bottom:16px;">15 小時</div>
+          <p style="font-size:13px; color:rgba(21,21,20,0.6); line-height:1.8;">奠定判斷的基石——學會「看懂結構」，讓你的手開始有判斷。</p>
+        </div>
+        <div style="background:rgba(197,178,144,0.14); border-top:2px solid var(--sand); padding:36px 28px;">
+          <div style="font-size:11px; letter-spacing:0.25em; color:var(--sand); text-transform:uppercase; margin-bottom:16px;">第二部曲</div>
+          <h3 style="font-size:18px; font-weight:700; color:var(--black); margin-bottom:12px; line-height:1.4;">結構五關</h3>
+          <div style="font-size:13px; color:rgba(21,21,20,0.5); margin-bottom:16px;">30 小時</div>
+          <p style="font-size:13px; color:rgba(21,21,20,0.6); line-height:1.8;">進入操作的核心——從「看懂」跨入「操作」，以小搏大。</p>
+        </div>
+        <div style="background:rgba(197,178,144,0.08); border-top:2px solid var(--sand); padding:36px 28px;">
+          <div style="font-size:11px; letter-spacing:0.25em; color:var(--sand); text-transform:uppercase; margin-bottom:16px;">第三部曲</div>
+          <h3 style="font-size:18px; font-weight:700; color:var(--black); margin-bottom:12px; line-height:1.4;">董氏奇穴全息應用</h3>
+          <div style="font-size:13px; color:rgba(21,21,20,0.5); margin-bottom:16px;">5 小時</div>
+          <p style="font-size:13px; color:rgba(21,21,20,0.6); line-height:1.8;">整合內外全息觀——由外觀內、由內調外，建立全人觀照。</p>
+        </div>
+      </div>
+
+      <!-- 第一部曲詳細 -->
+      <div style="border-left:2px solid rgba(197,178,144,0.3); padding-left:40px; margin-bottom:72px;">
+        <div style="font-size:11px; letter-spacing:0.25em; color:var(--sand); text-transform:uppercase; margin-bottom:16px;">第一部曲・15 小時</div>
+        <h3 style="font-size:clamp(22px,3vw,32px); font-weight:700; color:var(--black); margin-bottom:12px;">拆解先修班</h3>
+        <p style="font-size:14px; color:var(--sand); font-style:italic; margin-bottom:24px;">奠定判斷的基石</p>
+        <p style="font-size:14px; color:rgba(21,21,20,0.6); line-height:1.9; margin-bottom:32px; max-width:600px;">在進行任何身體操作之前，首要任務是建立清晰的結構藍圖。強調「先拆解，後動手」的原則——唯有先將複雜的身體結構與張力關係梳理清晰，才能確保後續的操作精準、有效且安全。</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:28px;">
+          <div style="background:rgba(21,21,20,0.06); padding:24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--sand); margin-bottom:10px;">觸診判讀</p>
+            <p style="font-size:13px; color:rgba(21,21,20,0.55); line-height:1.75;">透過雙手精準觸診，定位引發問題的根本張力來源，直接處理核心原因。</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--sand); margin-bottom:10px;">結構分辨</p>
+            <p style="font-size:13px; color:rgba(21,21,20,0.55); line-height:1.75;">建立分辨「主結構」與「代償結構」的能力，避免追逐症狀。</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--sand); margin-bottom:10px;">張力拆解</p>
+            <p style="font-size:13px; color:rgba(21,21,20,0.55); line-height:1.75;">系統性分析全身張力傳遞路徑，理解問題如何從一個點傳導至另一區域。</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--sand); margin-bottom:10px;">操作順序</p>
+            <p style="font-size:13px; color:rgba(21,21,20,0.55); line-height:1.75;">建立清晰的邏輯思維，判斷處理的先後順序——如同轉動保險箱的密碼鎖。</p>
+          </div>
+        </div>
+        <div style="background:rgba(197,178,144,0.08); border-left:2px solid var(--sand); padding:20px 24px;">
+          <p style="font-size:13px; color:rgba(21,21,20,0.7); line-height:1.8; font-style:italic;">「這不是在教你用力，而是在教你什麼時候不該動。」</p>
+        </div>
+      </div>
+
+      <!-- 第二部曲詳細 -->
+      <div style="border-left:2px solid rgba(197,178,144,0.3); padding-left:40px; margin-bottom:72px;">
+        <div style="font-size:11px; letter-spacing:0.25em; color:var(--sand); text-transform:uppercase; margin-bottom:16px;">第二部曲・30 小時</div>
+        <h3 style="font-size:clamp(22px,3vw,32px); font-weight:700; color:var(--black); margin-bottom:12px;">結構五關</h3>
+        <p style="font-size:14px; color:var(--sand); font-style:italic; margin-bottom:24px;">進入操作的核心</p>
+        <p style="font-size:14px; color:rgba(21,21,20,0.6); line-height:1.9; margin-bottom:32px; max-width:600px;">將判讀能力真正轉化為「身體操作」的實踐技術。適合已具備結構判讀基礎、想進入深層整體操作的人。</p>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px;">
+          <span style="font-size:13px; font-weight:700; color:var(--black); background:var(--sand); padding:8px 20px;">合力</span>
+          <span style="font-size:13px; font-weight:700; color:var(--black); background:var(--sand); padding:8px 20px;">環鬆</span>
+          <span style="font-size:13px; font-weight:700; color:var(--black); background:var(--sand); padding:8px 20px;">串勁</span>
+          <span style="font-size:13px; font-weight:700; color:var(--black); background:var(--sand); padding:8px 20px;">收軸</span>
+          <span style="font-size:13px; font-weight:700; color:var(--black); background:var(--sand); padding:8px 20px;">拆解</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:28px;">
+          <div style="background:rgba(21,21,20,0.06); padding:24px;">
+            <p style="font-size:13px; color:rgba(21,21,20,0.55); line-height:1.75;">在最小介入下引導結構回應，放棄用力控制的思維。</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px;">
+            <p style="font-size:13px; color:rgba(21,21,20,0.55); line-height:1.75;">讓身體自己完成調整——操作者是引導者而非修理工。</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px;">
+            <p style="font-size:13px; color:rgba(21,21,20,0.55); line-height:1.75;">出力更小，結構反而更穩——以小搏大的操作智慧。</p>
+          </div>
+        </div>
+        <div style="background:rgba(197,178,144,0.08); border-left:2px solid var(--sand); padding:20px 24px;">
+          <p style="font-size:13px; color:rgba(21,21,20,0.7); line-height:1.8; font-style:italic;">「不是控制身體，而是讓結構回到它該在的位置。」</p>
+        </div>
+      </div>
+
+      <!-- 第三部曲詳細 -->
+      <div style="border-left:2px solid rgba(197,178,144,0.3); padding-left:40px;">
+        <div style="font-size:11px; letter-spacing:0.25em; color:var(--sand); text-transform:uppercase; margin-bottom:16px;">第三部曲・5 小時</div>
+        <h3 style="font-size:clamp(22px,3vw,32px); font-weight:700; color:var(--black); margin-bottom:12px;">董氏奇穴全息應用</h3>
+        <p style="font-size:14px; color:var(--sand); font-style:italic; margin-bottom:24px;">整合內外全息觀</p>
+        <p style="font-size:14px; color:rgba(21,21,20,0.6); line-height:1.9; margin-bottom:32px; max-width:600px;">整合中醫臟腑理論與董氏奇穴的全息映射原理，建立由外觀內、由內調外的綜合應用系統，實現真正的全人觀照。</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:28px;">
+          <div style="background:rgba(21,21,20,0.06); padding:24px; text-align:center;">
+            <p style="font-size:13px; font-weight:700; color:var(--sand); margin-bottom:8px;">肝主筋</p>
+            <p style="font-size:12px; color:rgba(21,21,20,0.5); line-height:1.7;">影響筋的柔韌與彈性</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px; text-align:center;">
+            <p style="font-size:13px; font-weight:700; color:var(--sand); margin-bottom:8px;">心主脈</p>
+            <p style="font-size:12px; color:rgba(21,21,20,0.5); line-height:1.7;">反映血脈通暢與搏動</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px; text-align:center;">
+            <p style="font-size:13px; font-weight:700; color:var(--sand); margin-bottom:8px;">脾主肉</p>
+            <p style="font-size:12px; color:rgba(21,21,20,0.5); line-height:1.7;">關乎肌肉的豐盈與力量</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px; text-align:center;">
+            <p style="font-size:13px; font-weight:700; color:var(--sand); margin-bottom:8px;">肺主皮毛</p>
+            <p style="font-size:12px; color:rgba(21,21,20,0.5); line-height:1.7;">與皮膚毛髮健康相關</p>
+          </div>
+          <div style="background:rgba(21,21,20,0.06); padding:24px; text-align:center;">
+            <p style="font-size:13px; font-weight:700; color:var(--sand); margin-bottom:8px;">腎主骨</p>
+            <p style="font-size:12px; color:rgba(21,21,20,0.5); line-height:1.7;">決定骨骼的強健與否</p>
+          </div>
+        </div>
+
+        <div style="background:rgba(197,178,144,0.08); border-left:2px solid var(--sand); padding:20px 24px;">
+          <p style="font-size:13px; color:rgba(21,21,20,0.7); line-height:1.8; font-style:italic;">「臟腑的問題，一定會反映在筋、骨、肉、皮膚之上。」</p>
         </div>
       </div>
     </div>
