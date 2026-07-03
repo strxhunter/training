@@ -156,7 +156,7 @@
     .cert-footer {
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 0;
       border-top: 1px solid rgba(122,107,79,0.4);
       padding-top: 24px;
@@ -315,6 +315,10 @@
           </div>
         </div>
         <div class="cert-footer-item">
+          <span class="footer-label">授課老師</span>
+          <span class="footer-value" id="teacherName">　</span>
+        </div>
+        <div class="cert-footer-item">
           <span class="footer-label">證書編號</span>
           <span class="footer-value" id="certNo">STR-2026-B0001-0001</span>
         </div>
@@ -328,6 +332,8 @@
     <input type="text" id="nameInput" placeholder="輸入學員姓名" oninput="updateName(this.value)">
     <label>結業日期</label>
     <input type="date" id="dateInput" oninput="updateDate(this.value)" style="max-width:180px;">
+    <label>授課老師</label>
+    <input type="text" id="teacherInput" placeholder="輸入授課老師姓名" oninput="updateTeacher(this.value)" style="max-width:180px;">
     <label>證書編號</label>
     <input type="text" id="certInput" placeholder="STR-2026-B0001-0001" oninput="updateCert(this.value)" style="max-width:200px;">
     <button class="print-btn" onclick="window.print()">列印 / 存 PDF</button>
@@ -342,6 +348,9 @@
       const d = new Date(val);
       const str = `${d.getFullYear()} 年 ${d.getMonth()+1} 月 ${d.getDate()} 日`;
       document.getElementById('certDate').textContent = str;
+    }
+    function updateTeacher(val) {
+      document.getElementById('teacherName').textContent = val || '　';
     }
     function updateCert(val) {
       document.getElementById('certNo').textContent = val || 'STR-2026-B0001-0001';
