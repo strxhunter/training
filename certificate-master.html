@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>結業證書｜足部結構平衡健康管理師・高階認證</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sand: #C5B290;
+      --brown: #997B57;
+      --black: #151514;
+      --bg: #FAF7F3;
+      --gold: #8B6914;
+      --gold-light: #C9A84C;
+    }
+
+    body {
+      background: #b8a898;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+      font-family: 'Noto Serif TC', "PingFang TC", serif;
+    }
+
+    .certificate {
+      width: 297mm;
+      min-height: 210mm;
+      background: #F8F3EA;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 60px;
+    }
+
+    /* 雙框裝飾（高階用雙線） */
+    .border-outer {
+      position: absolute;
+      inset: 12px;
+      border: 2px solid rgba(139,105,20,0.5);
+      pointer-events: none;
+    }
+    .border-mid {
+      position: absolute;
+      inset: 17px;
+      border: 0.5px solid rgba(201,168,76,0.4);
+      pointer-events: none;
+    }
+    .border-inner {
+      position: absolute;
+      inset: 22px;
+      border: 0.5px solid rgba(139,105,20,0.2);
+      pointer-events: none;
+    }
+
+    .corner {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+    }
+    .corner-tl { top: 8px; left: 8px; border-top: 2.5px solid var(--gold-light); border-left: 2.5px solid var(--gold-light); }
+    .corner-tr { top: 8px; right: 8px; border-top: 2.5px solid var(--gold-light); border-right: 2.5px solid var(--gold-light); }
+    .corner-bl { bottom: 8px; left: 8px; border-bottom: 2.5px solid var(--gold-light); border-left: 2.5px solid var(--gold-light); }
+    .corner-br { bottom: 8px; right: 8px; border-bottom: 2.5px solid var(--gold-light); border-right: 2.5px solid var(--gold-light); }
+
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .logo-wrap { margin-bottom: 20px; }
+    .logo-wrap img { height: 72px; object-fit: contain; }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+      margin: 0 auto 20px;
+    }
+
+    .cert-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .cert-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .cert-subtitle {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .cert-body {
+      font-size: 13px;
+      color: rgba(21,21,20,0.55);
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .student-name {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.12em;
+      border-bottom: 1.5px solid var(--gold-light);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .cert-desc {
+      font-size: 13px;
+      color: rgba(21,21,20,0.6);
+      letter-spacing: 0.06em;
+      line-height: 2;
+      text-align: center;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .cert-desc strong { color: var(--gold); font-weight: 600; }
+
+    .cert-footer {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid rgba(139,105,20,0.35);
+      padding-top: 24px;
+      margin-top: 80px;
+    }
+
+    .cert-footer-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cert-footer-item:not(:last-child) {
+      border-right: 1px solid rgba(139,105,20,0.25);
+    }
+
+    .footer-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .footer-value {
+      font-size: 13px;
+      color: var(--black);
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    .signature-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .signature-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .signature-en {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: rgba(139,105,20,0.5);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .certificate { width: 297mm; height: 210mm; page-break-after: always; box-shadow: none; }
+      .control-bar { display: none; }
+      body { padding-top: 0; }
+    }
+
+    .control-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--black);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 100;
+    }
+    .control-bar label {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      white-space: nowrap;
+      font-family: -apple-system, "PingFang TC", sans-serif;
+    }
+    .control-bar input {
+      flex: 1;
+      max-width: 320px;
+      padding: 10px 16px;
+      font-size: 15px;
+      font-family: 'Noto Serif TC', "PingFang TC", serif;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: #fff;
+      letter-spacing: 0.08em;
+      outline: none;
+    }
+    .control-bar input::placeholder { color: rgba(255,255,255,0.25); }
+    .control-bar input:focus { border-color: var(--gold-light); }
+
+    .print-btn {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      font-family: -apple-system, "PingFang TC", sans-serif;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .print-btn:hover { background: var(--gold-light); color: var(--black); }
+
+    body { padding-top: 100px; }
+  </style>
+</head>
+<body>
+
+  <div class="certificate">
+    <div class="border-outer"></div>
+    <div class="border-mid"></div>
+    <div class="border-inner"></div>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <img class="watermark" src="logo-watermark.png" alt="">
+
+    <div class="content">
+
+      <div class="logo-wrap">
+        <img src="logo.png" alt="結構X獵人 STRxHunter">
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="cert-eyebrow">Certificate of Completion</p>
+      <h1 class="cert-title">結　業　證　書</h1>
+      <p class="cert-subtitle">足部結構平衡健康管理師・高階認證</p>
+
+      <p class="cert-body">茲證明</p>
+
+      <div class="student-name" id="studentName">學員姓名</div>
+
+      <p class="cert-desc">
+        已完成 <strong>足部結構平衡健康管理師・高階認證課程</strong><br>
+        共計 15 小時 / 3 天，具備全人結構力學整合評估、高階下肢結構還原技術、<br>
+        複雜全身性代償分析及個案管理系統建立之專業知能，<br>
+        特頒此證書以茲證明，並具備晉升正式講師及區域認證經銷商資格。
+      </p>
+
+      <div class="cert-footer">
+        <div class="cert-footer-item">
+          <span class="footer-label">結業日期</span>
+          <span class="footer-value" id="certDate">2026 年 __ 月 __ 日</span>
+        </div>
+        <div class="cert-footer-item">
+          <span class="footer-label">發證單位</span>
+          <div class="signature-wrap">
+            <span class="signature-text">結構 X 獵人</span>
+            <span class="signature-en">STRxHunter</span>
+          </div>
+        </div>
+        <div class="cert-footer-item">
+          <span class="footer-label">證書編號</span>
+          <span class="footer-value" id="certNo">STR-2026-A0001-0001</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="control-bar">
+    <label>學員姓名</label>
+    <input type="text" id="nameInput" placeholder="輸入學員姓名" oninput="updateName(this.value)">
+    <label>結業日期</label>
+    <input type="date" id="dateInput" oninput="updateDate(this.value)" style="max-width:180px;">
+    <label>證書編號</label>
+    <input type="text" id="certInput" placeholder="STR-2026-A0001-0001" oninput="updateCert(this.value)" style="max-width:200px;">
+    <button class="print-btn" onclick="window.print()">列印 / 存 PDF</button>
+  </div>
+
+  <script>
+    function updateName(val) {
+      document.getElementById('studentName').textContent = val || '學員姓名';
+    }
+    function updateDate(val) {
+      if (!val) return;
+      const d = new Date(val);
+      const str = `${d.getFullYear()} 年 ${d.getMonth()+1} 月 ${d.getDate()} 日`;
+      document.getElementById('certDate').textContent = str;
+    }
+    function updateCert(val) {
+      document.getElementById('certNo').textContent = val || 'STR-2026-A0001-0001';
+    }
+    const today = new Date();
+    document.getElementById('dateInput').value = today.toISOString().split('T')[0];
+    updateDate(today.toISOString().split('T')[0]);
+  </script>
+
+</body>
+</html>
