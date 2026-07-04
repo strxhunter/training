@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>結構X獵人｜完整學習地圖</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F9F7F4; font-family: 'PingFang TC', 'Noto Sans TC', sans-serif; padding: 20px; }
+  h1 { text-align: center; font-size: 18px; color: #3D3222; margin-bottom: 4px; }
+  .subtitle { text-align: center; font-size: 11px; color: #997B57; margin-bottom: 20px; }
+  .map { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .col-header { text-align: center; font-size: 11px; font-weight: 700; padding: 5px 8px; border-radius: 4px; margin-bottom: 8px; }
+  .ch-client { background: rgba(197,178,144,0.35); color: #7A6040; }
+  .ch-cert   { background: rgba(153,123,87,0.2); color: #6B4E2A; }
+  .ch-adv    { background: rgba(123,111,160,0.18); color: #5A4F80; }
+  .col { display: flex; flex-direction: column; gap: 10px; }
+  .card { border-radius: 10px; padding: 12px 14px; border: 1.5px solid #D9D2C7; background: white; }
+  .card-title { font-size: 12px; font-weight: 700; color: #3D3222; margin-bottom: 2px; }
+  .card-sub   { font-size: 10px; color: #997B57; margin-bottom: 6px; }
+  .card-body  { font-size: 10px; color: #6B5E4E; line-height: 1.65; }
+  .tag { display: inline-block; font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 3px; margin-top: 6px; }
+  .c-entry { background: #EDE8E0; border-color: #C5B290; }
+  .card-title-bar { margin: -12px -14px 8px -14px; padding: 7px 14px; border-radius: 8px 8px 0 0; }
+  .arrow-down { text-align: center; font-size: 16px; color: #997B57; line-height: 1; margin: -2px 0; }
+  .arrow-note { text-align: center; font-size: 9px; color: #997B57; margin-bottom: 2px; }
+  hr.divider { border: none; border-top: 1px dashed #D9D2C7; margin: 6px 0; }
+  .earlybird { font-size: 9px; color: #A0482A; font-weight: 600; }
+  .coach-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 8px; }
+  .coach-card { background: #FAF8F5; border: 1.5px solid #C5B290; border-radius: 8px; padding: 8px; text-align: center; }
+  .coach-name { font-size: 11px; font-weight: 700; color: #3D3222; }
+  .coach-price { font-size: 10px; color: #997B57; margin: 2px 0; }
+  .coach-note { font-size: 9px; color: #6B5E4E; }
+  a.title-link { text-decoration: none; cursor: pointer; }
+  a.title-link:hover .card-title,
+  a.title-link:hover > div { opacity: 0.75; }
+  .coach-card a { text-decoration: none; display: block; }
+  .coach-card a:hover .coach-name { text-decoration: underline; opacity: 0.75; }
+  @media print {
+    body { padding: 10px; }
+    .map { gap: 10px; }
+  }
+</style>
+</head>
+<body>
+<h1>結構 X 獵人｜完整學習地圖</h1>
+<p class="subtitle">客戶旅程 × 三級認證體系 × 進階選修 × 結構覺醒三部曲</p>
+
+<div class="map">
+  <div class="col">
+    <div class="col-header ch-client">▶ 客戶旅程</div>
+    <div class="card c-entry">
+      <div class="card-title">① 接觸品牌</div>
+      <div class="card-body">自媒體 / 體驗會 / 口碑推薦<br>異業合作 / 活動平台</div>
+    </div>
+    <div class="arrow-down">↓</div>
+    <div class="card c-entry">
+      <div class="card-title">② 線上 / 線下體驗會</div>
+      <div class="card-body">免費或低門檻，體驗足部結構概念</div>
+    </div>
+    <div class="arrow-down">↓</div>
+    <div class="card" style="border-color:#C5B290; border-width:2px; background:rgba(197,178,144,0.18);">
+      <div class="card-title">③ 首次體驗（優惠價）</div>
+      <div class="card-sub">NT$1,800 / 60min，不指定教練</div>
+    </div>
+    <div class="arrow-down">↓</div>
+    <div class="card c-entry">
+      <div class="card-title">④ 選擇教練路線</div>
+      <div class="coach-grid">
+        <div class="coach-card"><a href="coach.html"><div class="coach-name">不指定</div><div class="coach-price">NT$2,200</div><div class="coach-note">60min<br>持續保養</div></a></div>
+        <div class="coach-card"><a href="coach.html"><div class="coach-name">馬克教練</div><div class="coach-price">NT$2,200</div><div class="coach-note">50min<br>深度引導</div></a></div>
+        <div class="coach-card"><a href="coach.html"><div class="coach-name">Sean 教練</div><div class="coach-price">NT$2,500</div><div class="coach-note">50min<br>深度引導</div></a></div>
+      </div>
+    </div>
+    <div class="arrow-down">↓</div>
+    <div class="card" style="border-color:#997B57; border-width:2px; background:rgba(197,178,144,0.35);">
+      <div class="card-title">⑤ 定期回訪・持續優化</div>
+      <div class="card-body">每月/每季追蹤體態，建立長期信任</div>
+      <span class="tag" style="background:rgba(153,123,87,0.18); color:#7A6040;">→ 有興趣成為執行師 ↗ 進入認證體系</span>
+    </div>
+    <div class="arrow-down" style="color:#D9D2C7">↓</div>
+    <div class="card" style="border-color:#D9D2C7;">
+      <div class="card-title" style="color:#6B5E4E;">＋ 周邊輔助</div>
+      <div class="card-body">足弓結構平衡分析<br>帥垚運動鞋（亞洲腳型）<br>功能性鞋墊</div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="col-header ch-cert">▶ 足部平衡力學 三級認證</div>
+    <div class="card" style="border-color:#D9D2C7; background:#EDE8E0;">
+      <div class="card-title">入學前提</div>
+      <div class="card-body">對足部健康有興趣 / 曾接受體驗服務</div>
+    </div>
+    <div class="arrow-down" style="color:#C5B290;">↓</div>
+    <div class="card" style="border-color:#C5B290; border-width:2px;">
+      <a href="/training/index.html" class="title-link">
+      <div class="card-title-bar" style="background:rgba(197,178,144,0.35);">
+        <div class="card-title">初階｜健康教練 ↗</div>
+        <div class="card-sub">5H / 1天 ／ NT$12,800</div>
+      </div></a>
+      <div class="card-body">• 足弓三點受力 ＋ 人體地基關係<br>• 選鞋撇步 ＋ 足弓產品穿戴衛教<br>• 動態站姿步態引導</div>
+      <span class="tag" style="background:rgba(197,178,144,0.25); color:#7A6040;">產出：衛教推廣 ＋ 基礎售後服務</span>
+    </div>
+    <div class="arrow-note">⚠ 完成初階 →</div>
+    <div class="arrow-down" style="color:#997B57;">↓</div>
+    <div class="card" style="border-color:#997B57; border-width:2px;">
+      <a href="/training/index.html" class="title-link">
+      <div class="card-title-bar" style="background:rgba(153,123,87,0.28);">
+        <div class="card-title">進階｜健康諮詢師 ↗</div>
+        <div class="card-sub">10H / 2天 ／ NT$19,800</div>
+      </div></a>
+      <div class="card-body">• 足踝部結構失衡評估 ＋ 董氏足底全息思維<br>• 足踝基礎徒手還原技巧<br>• 手法引導 × 鞋具介入綜合建議方案</div>
+      <span class="tag" style="background:rgba(153,123,87,0.18); color:#6B4E2A;">產出：處理常見體態偏移，建立信任</span>
+    </div>
+    <div class="arrow-note">⚠ 完成初階＋進階 →</div>
+    <div class="arrow-down" style="color:#7A6040;">↓</div>
+    <div class="card" style="border-color:#7A6040; border-width:2.5px;">
+      <a href="/training/index.html" class="title-link">
+      <div class="card-title-bar" style="background:linear-gradient(135deg,#C5B290,#997B57);">
+        <div class="card-title" style="color:#FAF8F5;">高階｜健康管理師 ↗</div>
+        <div class="card-sub" style="color:rgba(250,248,245,0.9);">15H / 3天 ／ NT$29,800</div>
+      </div></a>
+      <div class="card-body">• 全人力學整合評估，全身代償分析<br>• 高階下肢結構還原：髖/膝/足踝頑固失衡<br>• 個案管理系統 ＋ 講師職能培訓</div>
+      <span class="tag" style="background:rgba(197,178,144,0.3); color:#5A4020;">產出：足部健康管理中心經營能力<br>正式講師 ＋ 區域認證經銷商</span>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="col-header ch-adv">▶ 進階選修 ＋ 結構覺醒三部曲</div>
+    <div class="card" style="border-color:#7B6FA0; border-width:2px;">
+      <a href="/training/index.html" class="title-link">
+      <div class="card-title-bar" style="background:rgba(123,111,160,0.22);">
+        <div class="card-title" style="color:#5A4F80;">【選修】董氏奇穴－穴位基礎與補氣九穴 ↗</div>
+        <div class="card-sub" style="color:#7B6FA0;">NT$12,800 ／ 前置：三級任一階</div>
+      </div></a>
+      <div class="card-body">• 骨骼定位法（骨標點精準取穴）<br>• 穴位基礎核心觀念 ＋ 取穴應用原則<br>• 補氣九穴：調補臟腑萬用穴組<br>• 10+ 組生活常用穴位</div>
+      <span class="tag" style="background:rgba(123,111,160,0.15); color:#5A4F80;">三級任一階完成即可報名</span>
+    </div>
+    <div style="height:12px;"></div>
+    <hr class="divider">
+    <div style="text-align:center; font-size:10px; font-weight:700; color:#7A6040; margin:6px 0 4px;">⬇ 完成高階後方可進入</div>
+    <hr class="divider">
+    <div style="height:4px;"></div>
+    <div style="text-align:center; font-size:12px; font-weight:700; color:#3D3222; margin-bottom:8px;">
+      「結構覺醒」三部曲
+      <div style="font-size:9px; color:#6B5E4E; font-weight:400; margin-top:2px;">環環相扣・層層遞進・觀察者 → 實踐者</div>
+    </div>
+    <div class="card" style="border-color:#6A9EAE; border-width:2px;">
+      <a href="/training/index.html" class="title-link">
+      <div class="card-title-bar" style="background:rgba(106,158,174,0.22);">
+        <div class="card-title" style="color:#2E6070;">首部曲｜拆解先修班 ↗</div>
+        <div class="card-sub" style="color:#4A8090;">15H ／ 前置：高階完成</div>
+      </div></a>
+      <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;"><span style="font-size:10px; color:#bbb; text-decoration:line-through;">NT$39,800</span><span class="earlybird">早鳥 NT$29,800</span></div>
+      <div class="card-body">先拆解，後動手——構建整個臨床思維底層架構，確保後續操作精準有效且安全。</div>
+      <hr class="divider">
+      <div class="card-body" style="font-style:italic; color:#4A8090;">「教你什麼時候不該動」</div>
+      <span class="tag" style="background:rgba(106,158,174,0.18); color:#2E6070;">產出：觀察者 → 判讀者</span>
+    </div>
+    <div class="arrow-note" style="color:#5A8A70;">⚠ 完成首部曲 →</div>
+    <div class="arrow-down" style="color:#5A8A70;">↓</div>
+    <div class="card" style="border-color:#5A8A70; border-width:2px;">
+      <a href="/training/index.html" class="title-link">
+      <div class="card-title-bar" style="background:rgba(90,138,112,0.22);">
+        <div class="card-title" style="color:#2A5040;">二部曲｜結構五關 ↗</div>
+        <div class="card-sub" style="color:#3A7060;">30H ／ 前置：首部曲</div>
+      </div></a>
+      <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;"><span style="font-size:10px; color:#bbb; text-decoration:line-through;">NT$88,000</span><span class="earlybird">早鳥 NT$78,000</span></div>
+      <div class="card-body">三部曲核心樞紐。將結構判讀轉化為操作實踐。<br>五關：合力、環鬆、串勁、收軸、拆解。</div>
+      <hr class="divider">
+      <div class="card-body" style="font-style:italic; color:#3A7060;">「讓結構回到它該在的位置」</div>
+      <span class="tag" style="background:rgba(90,138,112,0.18); color:#2A5040;">產出：判讀者 → 高效操作者</span>
+    </div>
+    <div class="arrow-note" style="color:#A0714A;">⚠ 完成二部曲 →</div>
+    <div class="arrow-down" style="color:#A0714A;">↓</div>
+    <div class="card" style="border-color:#B07840; border-width:2px;">
+      <a href="/training/index.html" class="title-link">
+      <div class="card-title-bar" style="background:rgba(176,120,64,0.22);">
+        <div class="card-title" style="color:#7A4E1A;">三部曲｜董氏奇穴全息應用 ↗</div>
+        <div class="card-sub" style="color:#9A6030;">5H ／ 前置：二部曲</div>
+      </div></a>
+      <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;"><span style="font-size:10px; color:#bbb; text-decoration:line-through;">NT$16,800</span><span class="earlybird">早鳥 NT$9,800</span></div>
+      <div class="card-body">整合中醫臟腑理論與董氏奇穴全息映射。由外觀內 × 由內調外的全人觀照系統。</div>
+      <hr class="divider">
+      <div class="card-body" style="font-style:italic; color:#9A6030;">肝主筋 / 心主脈 / 脾主肉 / 肺主皮毛 / 腎主骨</div>
+      <span class="tag" style="background:rgba(176,120,64,0.18); color:#7A4E1A;">產出：操作者 → 全人實踐者</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
